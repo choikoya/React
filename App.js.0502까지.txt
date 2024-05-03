@@ -1,0 +1,38 @@
+// import logo from './logo.svg';
+import './App.css';
+// import Hello from './01/Hello'; //from 뒤에 js 상대경로
+import MyClockImage from './02/MyClockImage';
+import MyClock from './02/MyClock';
+
+
+// 꼭 return 써서 function은 하나만 쓰기. 파일명=클래스네임 맞추기(꼭 대문자로 쓰기) 리액트가 대문자를 찾아서 리턴해서 던진걸 들고옴(태그묶음-한묶음)
+function App() {  //리액트는 사용자 function짜는것 컴포넌트. 
+  return ( //리턴할땐 아는태그 씀. 태그 하나만 리턴함(부모노드 div만) 자식노드(header-img/p/a)들은 달고 갈 수 있음
+  //  // App = App.js . class으로 쓰면 안되고 className으로 써야함 jsx문법
+   <div className="App"> 
+      {/* <header className="App-header"> */}
+        {/* 그림인 logo.svg를 {}써서 logo라는 변수처럼 씀 */}
+        {/* <img src={logo} className="App-logo" alt="logo" />  */}
+        {/* <p>Edit <code>src/App.js</code> and save to reload.
+          K-digital 7기</p> */}
+          {/* Hello.js에서 작성한걸 불러옴 <Hello></Hello> 를 아래처럼 쓰면됨*/}
+          {/* 여러번 재사용 가능. Hello.js에서 리턴하는 p, ul이 나옴 */}
+          {/* 컴포넌트 하나로 속성을 다르게 줘서 안의 데이터만 다르게 여러번 사용가능 */}
+          {/* <Hello /> 
+          <Hello />
+          <Hello />  */}
+          <MyClock/>
+        {/* <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a> */}
+      {/* </header> */}
+    </div>
+  );
+}
+
+export default App; //import 하려면 export 꼭 해야함
