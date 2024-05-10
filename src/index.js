@@ -6,9 +6,9 @@ import App from './App'; //App.js를 import할건데 App이란 이름으로 태�
 
 const root = ReactDOM.createRoot(document.getElementById('root')); //리액트 가상돔에 root를 만들고 시작
 root.render( //node에 다는게 렌더링> div에 App들어감
-  <React.StrictMode>
+  // <React.StrictMode> //App만 나오게 주석처리
     <App /> 
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
