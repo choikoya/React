@@ -5,7 +5,8 @@ import './App.css';
 //import MyDiv from './03/MyDiv';
 // import MyList from './04/MyList';
 // import Lotto from './05/Lotto';
-import FoodMain from './07/FoodMain';
+import TrafficMain from './08/TrafficMain'
+// import FoodMain from './07/FoodMain';
 import BoxOffice from './06/BoxOffice';
 import { IoHomeOutline } from "react-icons/io5";
 import { logDOM } from '@testing-library/react';
@@ -25,13 +26,14 @@ function App() {
       {/* grow 위아래 잡고 나머지 사이즈는 다 main으로 잡겠다 */}
       <main className='grow'> 
         
-      <FoodMain/>
+      {/* <FoodMain/> */}
         {/* <MyClock/> */}
         {/* / <MyDiv/> */}
         {/* <MyList/> */}
         {/* <Lotto/> */}
 {/*         
         <BoxOffice/> */}
+        <TrafficMain/>
 
     
       </main>
