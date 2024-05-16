@@ -5,11 +5,17 @@ import './App.css';
 //import MyDiv from './03/MyDiv';
 // import MyList from './04/MyList';
 // import Lotto from './05/Lotto';
-import TrafficMain from './08/TrafficMain'
-// import FoodMain from './07/FoodMain';
 import BoxOffice from './06/BoxOffice';
+// import TrafficMain from './08/TrafficMain'
+// import FoodMain from './07/FoodMain';
+import Traffic from './08_1/Traffic';
+// import TrafficNav from './08_1/TrafficNav';
+import MyRef from './09/MyRef';
+
+
 import { IoHomeOutline } from "react-icons/io5";
 import { logDOM } from '@testing-library/react';
+
 
 function App() { 
   return ( 
@@ -31,9 +37,11 @@ function App() {
         {/* / <MyDiv/> */}
         {/* <MyList/> */}
         {/* <Lotto/> */}
-{/*         
-        <BoxOffice/> */}
-        <TrafficMain/>
+        {/*<BoxOffice/> */}
+        {/* <TrafficMain/> */}
+        {/* <TrafficNav/> */}
+        {/* <Traffic/> */}
+        <MyRef/>
 
     
       </main>
