@@ -64,7 +64,7 @@ useEffect(()=>{
             <span className="mx-5 text-blue-700">state 변수 : {sVal}</span>
             <span className="text-green-700">ref 변수 : {rVal.current}</span>
         </div>
-        <div>
+        <div className="flex space-x-4">
             <span>
                 <ButtonC
                 caption="컴포넌트 변수"

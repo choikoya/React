@@ -5,12 +5,13 @@ import './App.css';
 //import MyDiv from './03/MyDiv';
 // import MyList from './04/MyList';
 // import Lotto from './05/Lotto';
-import BoxOffice from './06/BoxOffice';
+// import BoxOffice from './06/BoxOffice';
+import Gallery from './10/Gallery';
 // import TrafficMain from './08/TrafficMain'
 // import FoodMain from './07/FoodMain';
-import Traffic from './08_1/Traffic';
+// import Traffic from './08_1/Traffic';
 // import TrafficNav from './08_1/TrafficNav';
-import MyRef from './09/MyRef';
+// import MyRef from './09/MyRef';
 
 
 import { IoHomeOutline } from "react-icons/io5";
@@ -37,11 +38,12 @@ function App() {
         {/* / <MyDiv/> */}
         {/* <MyList/> */}
         {/* <Lotto/> */}
-        {/*<BoxOffice/> */}
+        {/* <BoxOffice/> */}
         {/* <TrafficMain/> */}
         {/* <TrafficNav/> */}
         {/* <Traffic/> */}
-        <MyRef/>
+        {/* <MyRef/> */}
+        <Gallery/>
 
     
       </main>

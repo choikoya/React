@@ -3,9 +3,9 @@
 import { TiArrowSortedUp } from "react-icons/ti";
 import { TiArrowSortedDown } from "react-icons/ti";
 export default function BoxOfficeTbody({dailyList, setSelMv}) { //dailList로 받아온 10개 항목을 body에 뿌림
-    console.log(dailyList);
+    // console.log(dailyList);
     const handleMvSelect = (mv)=>{
-        console.log("hanleMvSelect", mv)
+        // console.log("hanleMvSelect", mv)
         setSelMv(mv); //하면 박스오피스의 selMv가 바뀜>인포가 다시 그려짐
     }
     const tags = dailyList.map(item =>  //map을 돌면서 아이템을 만들어서 tr에 넣음
