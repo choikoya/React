@@ -16,6 +16,8 @@ export default function GalleryCard({imgUrl, title, content, spTag}) {
                     </span>
 
                     );
+
+    
                     
     console.log(sptags)
 

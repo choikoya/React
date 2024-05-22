@@ -2,12 +2,15 @@
 export default function ButtonC({caption, bcolor, handleClick}) {
     const colorB = {
         'blue' : 'bg-blue-600' ,
-        'orange' : 'bg-orange-600'
+        'orange' : 'bg-orange-600',
+        'green' : 'bg-green-400'
+        
     }
 
     const colorBHover = {
         'blue' : 'hover:bg-blue-900' ,
-        'orange' : 'hover:bg-orange-900'
+        'orange' : 'hover:bg-orange-900',
+        'green' : 'hover:bg-green-900'
     }
 
   return (
