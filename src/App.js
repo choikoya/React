@@ -15,6 +15,8 @@ import Traffic from './08_1/Traffic';
 import Festival from './11/Festival';
 import Frcst from './13/Frcst';
 import FrcstList from './13/FrcstList';
+import RecoilMain from './14/RecoilMain';
+import Rest from './15/Rest';
 
 
 import { IoHomeOutline } from "react-icons/io5";
@@ -23,7 +25,8 @@ import { logDOM } from '@testing-library/react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 function App() {
   return (
-    <BrowserRouter>
+    //BrowserRouter 지금부터 정의하는 경로에 대한 정보를 다 쓸수있다(공유)
+    <BrowserRouter> 
       {/* <div className="App">  */}
       <div className="flex flex-col w-full max-w-screen-lg h-screen overflow-y-auto mx-auto">
         {/* <MyClock/> */}
@@ -63,6 +66,14 @@ function App() {
                          hover:bg-white hover:text-blue-600'>
             <Link to='/frcst'>단기예보</Link>
             </li>
+            <li className='mx-2 p-2 rounded-md
+                         hover:bg-white hover:text-blue-600'>
+            <Link to='/recoil'>Recoil</Link>
+            </li>
+            <li className='mx-2 p-2 rounded-md
+                         hover:bg-white hover:text-blue-600'>
+            <Link to='/rest'>Rest</Link>
+            </li>
             
             
           </ul>
@@ -75,6 +86,7 @@ function App() {
         </header>
         {/* grow 위아래 잡고 나머지 사이즈는 다 main으로 잡겠다 */}
         <main className='grow w-full flex justify-center items-center overflow-y-auto '>
+          {/*Routes 안에 쓸수있는 경로 정보 정의(경로만드는것) */}
           <Routes>
             <Route path = '/food' element={<FoodMain/>}/>
             <Route path='/' element={<MyClock />} />
@@ -90,6 +102,10 @@ function App() {
             <Route path='festival' element={<Festival/>}/>
             <Route path='/frcst' element={<Frcst/>}/>
             <Route path='/frcstlt' element={<FrcstList/>}/>
+            <Route path='/recoil' element={<RecoilMain/>}/>
+            <Route path='/rest' element={<Rest/>}/>
+            
+
             
           </Routes>
 

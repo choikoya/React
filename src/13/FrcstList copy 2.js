@@ -1,11 +1,11 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom"; //경로매칭
 import { useState, useEffect, useRef } from "react";
 import TailSelect from "../UI/TailSelect";
 
 import getcode from './getcode.json';
 
 export default function FrcstList() {
-  //url 전달 값 
+  //url 전달 값 url에서 필요한정보 뽑아올때 씀
   const [sParms] = useSearchParams();
   const gubun = sParms.get('gubun');
   const x = sParms.get('x');
@@ -17,15 +17,11 @@ export default function FrcstList() {
   //state 변수
   const [tdata, setTdata] = useState();       //예보 정보
   const [ops, setOps] = useState([]);
-  const [selItem, setSelItem] = useState();  //선택한 항목 코드 정보
-  const [tags, setTags] = useState();        //화면 tr생성
+  const [selItem, setSelItem] = useState(); //선택한 항목 코드 정보
+  const [tags, setTags] = useState();
 
   //ref 변수
   const selRef = useRef();
-
-  //code 변수
-  const sky = {"1":"맑음🌞", "3":"구름많음", "4":"흐림"};
-  const pty = {"0":"없음", "1":"비", "2":"비/눈", "3":"눈", "4":"소나기", "5":"빗방울", "6":"빗방울눈날림", "7":"눈날림" }
 
   //항목선택
   // data fetch
@@ -39,15 +35,15 @@ export default function FrcstList() {
       ;
   }
   const handleSelect = () => {
-    // console.log(selRef.current.value)
+    console.log(selRef.current.value)
     let tm = getcode.filter(item => (gubun === '단기'
       ? item["예보구분"] === "단기예보"
       : item["예보구분"] === "초단기예보") &&
       item["항목명"] === selRef.current.value);
     console.log("select item", tm)
     setSelItem(tm[0]);
-  }
 
+  }
   //컴포넌트 생성시
   useEffect(() => {
     //항목 select 
@@ -80,35 +76,15 @@ export default function FrcstList() {
 
   useEffect(() => {
     if (!selItem) return;
-    console.log("selItem", selItem)
+    let tm = tdata.filter(item => item.category === selItem.항목값)
+      .map(item => <tr>
 
-    let tm = tdata.filter(item => item['category'] === selItem['항목값'])
-                  .map(item =>
-                    <tr key={`${item["fcstDate"]}${item["fcstTime"]}`}  
-                        className="border-b border-neutral-200 hover:bg-neutral-100 text-center">
-                      <td scope="col" className="px-6 py-3">
-                        {selItem["항목명"]}({item["category"]})
-                      </td>
-                      <td scope="col" className="px-6 py-3">
-                        {`${item["fcstDate"].substring(0, 4)}-${item["fcstDate"].substring(4, 6)}-${item["fcstDate"].substring(6, 8)}`}
-                      </td>
-                      <td scope="col" className="px-6 py-3">
-                        {`${item["fcstTime"].substring(0, 2)}:${item["fcstTime"].substring(2, 4)}`}
-                      </td>
-                      <td scope="col" className="px-6 py-3">
-                      {item["category"] === 'SKY'
-                          ? sky[item["fcstValue"]] 
-                          : item["category"] === 'PTY' 
-                            ? pty[item["fcstValue"]]
-                            : `${item["fcstValue"]} ${selItem["단위"]}`} 
-                      </td>
-                    </tr>
+      </tr>)
+    console.log(selItem)
+    console.log(tm)
+    setTags(tm);
+  });
 
-      );
-    console.log("tdata filter", tm);
-    setTags(tm);  
-
-  }, [selItem])
   return (
     <div className="w-full h-full flex flex-col
                         justify-start items-center">
@@ -116,7 +92,7 @@ export default function FrcstList() {
                     grid grid-cols-1 md:grid-cols-2 p-2 gap-2">
         <h1 className="w-full text-2xl font-bold 
                      flex justify-center items-center m-5">
-          {gubun}예보 ( <div className="text-blue-800">{area} {dt}</div> )
+          {gubun}예보 ( <div className="text-blue-800">{area}</div> )
         </h1>
         <div className="flex justify-center items-center m-5">
           <TailSelect id="sel"
